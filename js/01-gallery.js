@@ -27,7 +27,7 @@ function createGallerySet(gallery) {
 
 function onImgClick(event) { 
     event.preventDefault();
-    if (!event.target.classlist.containe('gallery__image')){ 
+    if (!event.target.classlist.contains('gallery__image')){ 
         return;
     }
     const instance = basicLightbox.create(`
