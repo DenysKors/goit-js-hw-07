@@ -11,7 +11,7 @@ divGalleryRef.insertAdjacentHTML('beforeend', galleryLayout)
     
 function createGallerySet(gallery) {
     return galleryItems
-        .map(({ preview, original, description }) =>  
+        .map(({ preview, original, description }) =>
             `<div class="gallery__item">
                 <a class="gallery__link" href="${original}">
                     <img
@@ -27,8 +27,11 @@ function createGallerySet(gallery) {
 
 function onImgClick(event) { 
     event.preventDefault();
+    if (!event.target.classlist.containe('gallery__image')){ 
+        return;
+    }
     const instance = basicLightbox.create(`
-        <img src="${event.target.dataset.sourse}">
+        <img src="${event.target.dataset.source}">
     `)
     instance.show()
 }
