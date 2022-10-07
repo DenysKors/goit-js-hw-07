@@ -1,22 +1,16 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
+const divGalleryRef = document.querySelector('.gallery');
 
-const divGalleryRef = document.querySelector('.gallery')
+divGalleryRef.addEventListener('click', onImgClick)
 
+const galleryLayout = createGallerySet(galleryItems);
 
-
-// const instance = basicLightbox.create(`
-//    <img src="assets/images/image.png">
-// `)
-
-// divGalleryRef.addEventListener('click', instance)
-// instance.show()
-
-
-function createGallerySet() {
-    const galleryLayout = galleryItems
+divGalleryRef.insertAdjacentHTML('beforeend', galleryLayout)
+    
+function createGallerySet(gallery) {
+    return galleryItems
         .map(({ preview, original, description }) =>  
             `<div class="gallery__item">
                 <a class="gallery__link" href="${original}">
@@ -29,8 +23,12 @@ function createGallerySet() {
                 </a>
             </div>`)
         .join('')
-
-    divGalleryRef.innerHTML = galleryLayout;
 }
 
-createGallerySet()
+function onImgClick(event) { 
+    event.preventDefault();
+    const instance = basicLightbox.create(`
+        <img src="${event.target.dataset.sourse}">
+    `)
+    instance.show()
+}
