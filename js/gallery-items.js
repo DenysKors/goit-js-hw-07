@@ -1,9 +1,9 @@
 export const galleryItems = [
   {
     preview:
-      'https://images.pexels.com/photos/5579177/pexels-photo-5579177.jpeg',
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825__340.jpg',
     original:
-      'https://images.pexels.com/photos/5579177/pexels-photo-5579177.jpeg',
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg',
     description: 'Hokkaido Flower',
   },
   {
@@ -66,6 +66,5 @@ export const galleryItems = [
 
 
 
-// https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825__340.jpg
 
-// https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg
+

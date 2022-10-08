@@ -1,6 +1,8 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
+let modal;
+
 const divGalleryRef = document.querySelector('.gallery');
 
 divGalleryRef.addEventListener('click', onImgClick)
@@ -28,11 +30,28 @@ function createGallerySet(gallery) {
 function onImgClick(event) { 
     event.preventDefault();
     if (!event.target.classList.contains('gallery__image')) { 
-        return
+        return;
     }
-    console.log(event.target)
-    const modal = basicLightbox.create(`
+    modal = basicLightbox.create(`
         <img src="${event.target.dataset.source}">
     `)
-    modal.show()
+    modal.show();
+
+    onOpenModal();
+}
+
+function onEscModalClose(event) { 
+    if (event.key === 'Escape') { 
+        modal.close()
+    }
+    console.log(event)
+    onCloseModal()
+} 
+
+function onOpenModal() { 
+    window.addEventListener('keydown', onEscModalClose)
+}
+
+function onCloseModal() { 
+    window.removeEventListener('keydown', onEscModalClose)
 }
