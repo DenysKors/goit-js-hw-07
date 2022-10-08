@@ -27,11 +27,12 @@ function createGallerySet(gallery) {
 
 function onImgClick(event) { 
     event.preventDefault();
-    if (!event.target.classlist.contains('gallery__image')){ 
-        return;
+    if (!event.target.classList.contains('gallery__image')) { 
+        return
     }
-    const instance = basicLightbox.create(`
+    console.log(event.target)
+    const modal = basicLightbox.create(`
         <img src="${event.target.dataset.source}">
     `)
-    instance.show()
+    modal.show()
 }
