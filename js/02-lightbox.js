@@ -3,7 +3,7 @@ import { galleryItems } from './gallery-items.js';
 
 const ulGalleryRef = document.querySelector('.gallery');
 
-ulGalleryRef.addEventListener('click', onImgClick)
+// ulGalleryRef.addEventListener('click', onImgClick)
 
 const galleryLayout = createGallerySet(galleryItems);
 
@@ -18,10 +18,12 @@ function createGallerySet(gallery) {
         .join('')
 }
 
-function onImgClick(event) { 
-    event.preventDefault();
-    if (!event.target.classList.contains('gallery__image')) { 
-        return;
-    }
-    let lightbox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250});
-}
+let lightbox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250 });
+ 
+// function onImgClick(event) { 
+//     event.preventDefault();
+//     if (!event.target.classList.contains('gallery__image')) { 
+//         return;
+//     }
+//     let lightbox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250});
+// }
